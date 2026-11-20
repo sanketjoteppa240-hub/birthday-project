@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Niruth ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            width: 100%;
+            margin: 25px auto;
+        }
+
+        .photo-item {
+            background: white;
+            padding: 12px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        .photo-item img {
+            display: block;
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .photo-item p {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .memories-card {
+            width: 90%;
+            max-width: 900px;
+        }
+
+        .photo-item img:not([src]) {
+            display: none;
+        }
+
+        @media(max-width: 600px) {
+            .photo-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-item img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<section class="screen active" id="entryScreen">
+    <div class="paper entry-card">
+        <div class="sticker">🩺</div>
+        <p class="small-heading">SPECIAL BIRTHDAY INVITATION</p>
+        <h1>WHO ARE YOU?</h1>
+        <p>Before entering this secret place, answer these questions!</p>
+
+        <form id="loginForm">
+            <input type="text" id="answer1" placeholder="Your name?" required>
+            <input type="text" id="answer2" placeholder="Your profession?" required>
+            <input type="text" id="answer3" placeholder="Your favourite troublemaker?" required>
+            <button type="submit" class="red-button">UNLOCK THE SURPRISE ❤️</button>
+            <p id="errorMessage"></p>
+        </form>
+    </div>
+</section>
+
+<section class="screen" id="welcomeScreen">
+    <div class="paper welcome-card">
+        <p class="small-heading">HEY YOU!!</p>
+        <div class="mascot">🧑‍⚕️</div>
+        <h1>HOW DARE YOU<br>GROW OLDER!!</h1>
+        <p>Do you really think you're getting wiser? 😂</p>
+        <h2>ARE YOU EXCITED?</h2>
+        <div class="button-group">
+            <button class="red-button" data-go="giftScreen">YES! 😍</button>
+            <button class="white-button" id="noButton">NO 🙄</button>
+        </div>
+        <p id="noMessage"></p>
+    </div>
+</section>
+
+<section class="screen" id="giftScreen">
+    <div class="paper gifts-card">
+        <p class="small-heading">A LITTLE SOMETHING FOR YOU</p>
+        <h1>Each gift has something for you!</h1>
+        <p>Choose carefully, Doctor. No refunds. 😂</p>
+
+        <div class="gift-container">
+            <button class="gift-box" data-go="wishScreen"><span>🎁</span><small>GIFT 01</small></button>
+            <button class="gift-box" data-go="memoryScreen"><span>🎁</span><small>GIFT 02</small></button>
+            <button class="gift-box" data-go="diagnosisScreen"><span>🎁</span><small>GIFT 03</small></button>
+        </div>
+
+        <h2>CLICK ON THE GIFTS ❤️</h2>
+        <button class="text-button" data-go="cakeScreen">Continue to your birthday cake →</button>
+    </div>
+</section>
+
+<section class="screen" id="wishScreen">
+    <div class="paper letter-card">
+        <p class="small-heading">GIFT NUMBER ONE 💌</p>
+        <h1>HAPPY BIRTHDAY!</h1>
+        <div class="mascot">🎂</div>
+        <p>Dear Niruth, another year older and still acting like a five-year-old.</p>
+        <p>May your life be filled with happiness, success, laughter and unlimited cake.</p>
+        <p>Keep smiling, keep shining and please try to increase your maturity level.</p>
+        <h2>HAPPY BIRTHDAY, LEGEND! ❤️</h2>
+        <button class="red-button" data-go="giftScreen">BACK TO GIFTS</button>
+    </div>
+</section>
+
+<!-- MEMORY GALLERY -->
+<section class="screen" id="memoryScreen">
+    <div class="paper memories-card">
+        <p class="small-heading">GIFT NUMBER TWO 📸</p>
+        <h1>OUR MEMORIES</h1>
+        <p>Some moments are too special to forget.</p>
+
+        <div class="photo-gallery">
+
+            <div class="photo-item">
+                <img src="./photos/photo1.jpg" alt="Our first memory">
+                <p>THE CRAZY BEGINNING ❤️</p>
+            </div>
+
+            <div class="photo-item">
+                <img src="./photos/photo2.jpg" alt="Our second memory">
+                <p>UNFORGETTABLE DAYS 😂</p>
+            </div>
+
+            <div class="photo-item">
+                <img src="./photos/photo3.jpg" alt="Our third memory">
+                <p>FOREVER IDIOTS 💀</p>
+            </div>
+
+        </div>
+
+        <h2>MORE MEMORIES TO COME!</h2>
+        <button class="red-button" data-go="giftScreen">BACK TO GIFTS</button>
+    </div>
+</section>
+
+<section class="screen" id="diagnosisScreen">
+    <div class="paper diagnosis-card">
+        <p class="small-heading">GIFT NUMBER THREE 🩺</p>
+        <h1>MEDICAL REPORT</h1>
+        <div class="mascot">👨‍⚕️</div>
+        <h2>PATIENT: DR. NIRUTH</h2>
+        <p><strong>Diagnosis:</strong> Permanent Idiot Syndrome.</p>
+        <p><strong>Symptoms:</strong></p>
+        <ul>
+            <li>Excessive overconfidence.</li>
+            <li>Uncontrollable nonsense.</li>
+            <li>Severe shortage of maturity.</li>
+            <li>Dangerous levels of attitude.</li>
+        </ul>
+        <p><strong>Prescription:</strong></p>
+        <ul>
+            <li>Three slices of birthday cake.</li>
+            <li>Unlimited happiness.</li>
+            <li>One dose of friendship daily.</li>
+            <li>No growing up allowed.</li>
+        </ul>
+        <h2>NO CURE AVAILABLE! 💀</h2>
+        <button class="red-button" data-go="giftScreen">BACK TO GIFTS</button>
+    </div>
+</section>
+
+<section class="screen" id="cakeScreen">
+    <div class="paper cake-card">
+        <p class="small-heading">YOUR SPECIAL MOMENT</p>
+        <h1>MAKE A WISH!</h1>
+        <div class="cake-emoji" id="cakeEmoji">🎂</div>
+        <p>Close your eyes, make a wish and blow out your candles!</p>
+        <button class="red-button" id="blowButton">BLOW THE CANDLES 🕯️</button>
+        <p id="cakeMessage"></p>
+        <button class="text-button hidden" id="birthdayButton">SEE YOUR FINAL SURPRISE →</button>
+    </div>
+</section>
+
+<section class="screen" id="birthdayScreen">
+    <div class="paper birthday-card">
+        <p class="small-heading">TODAY IS ALL ABOUT YOU</p>
+        <div class="mascot">🎉🎂🎈</div>
+        <h1>HAPPY<br>BIRTHDAY!</h1>
+        <h2>DR. NIRUTH ❤️</h2>
+        <p>May all the good things you've been waiting for find their way to you.</p>
+        <p>Stay happy. Stay blessed. Stay crazy!</p>
+        <button class="red-button" data-go="letterScreen">ONE LAST SURPRISE 💌</button>
+    </div>
+</section>
+
+<section class="screen" id="letterScreen">
+    <div class="paper final-letter">
+        <p class="small-heading">A LETTER FROM YOUR BEST FRIEND</p>
+        <h1>MY FAVOURITE IDIOT ❤️</h1>
+        <p>Dear Niruth,</p>
+        <p>I don't know how to explain how lucky I am to have a friend like you.</p>
+        <p>From our random conversations to our craziest memories, every moment has become something special.</p>
+        <p>You're a doctor who treats patients, but you are still a patient when it comes to your own stupidity. 😂</p>
+        <p>I hope you achieve everything you dream of. May your future be full of success, happiness and unforgettable moments.</p>
+        <p>Thank you for being you. Never change, bro!</p>
+        <h2>HAPPY BIRTHDAY ONCE AGAIN! 🥳</h2>
+        <h2>YOUR BEST FRIEND ❤️</h2>
+    </div>
+</section>
+
+<footer>
+    <p>MADE WITH ❤️ JUST FOR NIRUTH</p>
+    <p>© 2026 | THE BIRTHDAY PROJECT</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

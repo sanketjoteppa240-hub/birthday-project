@@ -1,0 +1,755 @@
+
+/* =====================================
+   NIRUTH BIRTHDAY SCRAPBOOK WEBSITE
+   MAIN STYLESHEET
+===================================== */
+
+:root {
+    --orange: #e98252;
+    --dark-orange: #bd5738;
+    --cream: #fff8e9;
+    --paper: #fffdf6;
+    --blue: #c9e8f2;
+    --dark-blue: #456c7a;
+    --brown: #694b3a;
+    --pink: #f7c5c2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--brown);
+    min-height: 100vh;
+
+    background-color: var(--cream);
+
+    background-image:
+        linear-gradient(45deg, var(--orange) 25%, transparent 25%),
+        linear-gradient(-45deg, var(--orange) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, var(--orange) 75%),
+        linear-gradient(-45deg, transparent 75%, var(--orange) 75%);
+
+    background-size: 50px 50px;
+    background-position:
+        0 0,
+        0 25px,
+        25px -25px,
+        -25px 0;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =====================================
+   SCREEN TRANSITIONS
+===================================== */
+
+.screen {
+    display: none;
+    min-height: 100vh;
+    padding: 55px 18px 75px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.screen.active {
+    display: flex;
+    animation: screenEnter 0.7s ease;
+}
+
+@keyframes screenEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================
+   PAPER CARD DESIGN
+===================================== */
+
+.paper {
+    position: relative;
+
+    width: 100%;
+    max-width: 700px;
+
+    padding: 50px 40px;
+
+    background: var(--paper);
+
+    border: 3px solid #fff;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 0 #b95f3d,
+        0 15px 35px #67351e35;
+
+    text-align: center;
+}
+
+.paper::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    font-size: 25px;
+
+    color: var(--orange);
+}
+
+.paper::after {
+    content: "♥";
+
+    position: absolute;
+
+    bottom: 15px;
+    left: 20px;
+
+    font-size: 22px;
+
+    color: #ed9994;
+}
+
+
+/* =====================================
+   COMMON TEXT
+===================================== */
+
+.small-heading {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    font-weight: 800;
+
+    color: var(--dark-orange);
+
+    margin-bottom: 20px;
+}
+
+.paper h1 {
+    font-family: 'Pacifico', cursive;
+
+    font-size: clamp(30px, 6vw, 48px);
+
+    line-height: 1.35;
+
+    color: var(--dark-orange);
+
+    margin-bottom: 20px;
+}
+
+.paper h2 {
+    font-family: 'Caveat', cursive;
+
+    font-size: 32px;
+
+    color: var(--dark-blue);
+
+    margin: 20px 0;
+}
+
+.paper p {
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: #846957;
+}
+
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.red-button {
+    background: var(--orange);
+
+    color: white;
+
+    border: none;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    box-shadow: 0 5px 0 var(--dark-orange);
+
+    transition: 0.25s;
+
+    margin: 15px 5px;
+}
+
+.red-button:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 9px 0 var(--dark-orange);
+}
+
+.red-button:active {
+    transform: translateY(3px);
+
+    box-shadow: 0 2px 0 var(--dark-orange);
+}
+
+.white-button {
+    background: white;
+
+    color: var(--dark-orange);
+
+    border: 2px solid var(--orange);
+
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    font-weight: 800;
+
+    margin: 15px 5px;
+
+    transition: 0.3s;
+}
+
+.white-button:hover {
+    background: #fff0e5;
+}
+
+.text-button {
+    background: none;
+
+    border: none;
+
+    color: var(--dark-orange);
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    padding: 15px;
+
+    margin-top: 20px;
+
+    transition: 0.3s;
+}
+
+.text-button:hover {
+    color: var(--dark-blue);
+
+    transform: translateX(5px);
+}
+
+
+/* =====================================
+   ENTRY SCREEN
+===================================== */
+
+.entry-card {
+    max-width: 480px;
+
+    background: var(--blue);
+}
+
+.sticker {
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+    animation: floating 3s infinite ease-in-out;
+}
+
+.entry-card form {
+    margin-top: 30px;
+}
+
+.entry-card input {
+    display: block;
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin: 15px 0;
+
+    border: 2px solid #a9d0dc;
+
+    background: #fffdf7;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    color: var(--brown);
+}
+
+.entry-card input:focus {
+    border-color: var(--orange);
+}
+
+#errorMessage {
+    color: #b43f37;
+
+    font-weight: 700;
+
+    font-size: 12px;
+
+    margin-top: 15px;
+}
+
+
+/* =====================================
+   WELCOME SCREEN
+===================================== */
+
+.welcome-card {
+    max-width: 650px;
+
+    background: #fff5e5;
+}
+
+.mascot {
+    font-size: 100px;
+
+    margin: 20px 0;
+
+    animation: floating 3s infinite ease-in-out;
+}
+
+.button-group {
+    margin-top: 25px;
+}
+
+#noMessage {
+    color: var(--dark-orange);
+
+    font-weight: 700;
+
+    margin-top: 15px;
+}
+
+
+/* =====================================
+   FLOATING ANIMATION
+===================================== */
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(3deg);
+    }
+}
+
+
+/* =====================================
+   THREE GIFT BOXES
+===================================== */
+
+.gifts-card {
+    max-width: 850px;
+
+    background: #fff0e4;
+}
+
+.gift-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin: 45px 0;
+}
+
+.gift-box {
+    background: #f7d4d0;
+
+    border: 3px solid white;
+
+    border-radius: 20px;
+
+    padding: 30px 10px;
+
+    box-shadow: 0 6px 0 #dc998d;
+
+    transition: 0.3s;
+}
+
+.gift-box:nth-child(2) {
+    background: #d7eaf2;
+
+    box-shadow: 0 6px 0 #91b9ca;
+}
+
+.gift-box:nth-child(3) {
+    background: #ffe0b4;
+
+    box-shadow: 0 6px 0 #dfad75;
+}
+
+.gift-box span {
+    display: block;
+
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+    transition: 0.3s;
+}
+
+.gift-box small {
+    font-weight: 800;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: var(--brown);
+}
+
+.gift-box:hover {
+    transform: translateY(-12px) rotate(-3deg);
+}
+
+.gift-box:hover span {
+    transform: scale(1.2) rotate(10deg);
+}
+
+
+/* =====================================
+   BIRTHDAY WISH
+===================================== */
+
+.letter-card {
+    background: #fff2e9;
+
+    max-width: 650px;
+}
+
+.letter-card p {
+    font-size: 15px;
+
+    margin: 20px 0;
+}
+
+.letter-card .mascot {
+    font-size: 80px;
+}
+
+
+/* =====================================
+   MEMORY GALLERY
+===================================== */
+
+.memories-card {
+    max-width: 900px;
+
+    background: #dceff5;
+}
+
+.photo-gallery {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin: 40px 0;
+}
+
+.photo-item {
+    background: white;
+
+    padding: 12px 12px 22px;
+
+    box-shadow: 0 5px 15px #526a7730;
+
+    transform: rotate(-3deg);
+
+    transition: 0.3s;
+}
+
+.photo-item:nth-child(2) {
+    transform: rotate(3deg);
+
+    margin-top: 20px;
+}
+
+.photo-item:nth-child(3) {
+    transform: rotate(-2deg);
+}
+
+.photo-item:hover {
+    transform: rotate(0deg) translateY(-10px);
+
+    z-index: 2;
+}
+
+.photo-item img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    border: 1px solid #eee;
+}
+
+.photo-item p {
+    font-family: 'Caveat', cursive;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: var(--dark-blue);
+
+    margin-top: 12px;
+}
+
+
+/* =====================================
+   DOCTOR DIAGNOSIS
+===================================== */
+
+.diagnosis-card {
+    max-width: 650px;
+
+    background: #fff4df;
+}
+
+.diagnosis-card ul {
+    text-align: left;
+
+    padding-left: 30px;
+
+    margin: 15px 0 25px;
+
+    line-height: 2.3;
+
+    font-size: 14px;
+
+    color: #846957;
+}
+
+.diagnosis-card h2 {
+    color: var(--dark-orange);
+}
+
+
+/* =====================================
+   BIRTHDAY CAKE
+===================================== */
+
+.cake-card {
+    max-width: 600px;
+
+    background: #ffe9ed;
+}
+
+.cake-emoji {
+    font-size: 140px;
+
+    margin: 30px 0;
+
+    animation: floating 3s infinite ease-in-out;
+}
+
+#cakeMessage {
+    font-family: 'Caveat', cursive;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    color: var(--dark-orange);
+
+    margin: 20px 0;
+}
+
+
+/* =====================================
+   FINAL BIRTHDAY SCREEN
+===================================== */
+
+.birthday-card {
+    max-width: 650px;
+
+    background: #dceff5;
+}
+
+.birthday-card .mascot {
+    font-size: 90px;
+}
+
+.birthday-card h1 {
+    font-size: clamp(40px, 8vw, 65px);
+
+    color: #df704b;
+}
+
+.birthday-card h2 {
+    color: var(--dark-blue);
+}
+
+
+/* =====================================
+   FINAL LETTER
+===================================== */
+
+.final-letter {
+    max-width: 700px;
+
+    background: #fff4df;
+
+    padding: 55px 45px;
+}
+
+.final-letter p {
+    font-family: 'Caveat', cursive;
+
+    font-size: 23px;
+
+    text-align: left;
+
+    margin: 22px 0;
+
+    color: #73503d;
+}
+
+.final-letter h1 {
+    font-size: 38px;
+}
+
+.final-letter h2 {
+    color: var(--dark-orange);
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    width: 100%;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background: #fff6e8;
+
+    border-top: 3px dashed #e8a16d;
+}
+
+footer p {
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #a96b4e;
+
+    margin: 5px;
+}
+
+
+/* =====================================
+   MOBILE RESPONSIVENESS
+===================================== */
+
+@media (max-width: 650px) {
+
+    .paper {
+        padding: 40px 22px;
+    }
+
+    .screen {
+        padding: 30px 14px;
+    }
+
+    .gift-container {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .gift-box {
+        padding: 20px;
+    }
+
+    .gift-box span {
+        font-size: 50px;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .photo-item {
+        max-width: 320px;
+
+        margin: auto !important;
+    }
+
+    .photo-item img {
+        height: 280px;
+    }
+
+    .mascot {
+        font-size: 75px;
+    }
+
+    .cake-emoji {
+        font-size: 110px;
+    }
+
+    .final-letter {
+        padding: 40px 25px;
+    }
+
+    .final-letter p {
+        font-size: 20px;
+    }
+
+}
