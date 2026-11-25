@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LocalMart | Discover Local Businesses</title>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+
+            <h1 class="logo">LocalMart<span>.</span></h1>
+
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#businesses">Businesses</a></li>
+            </ul>
+
+            <a href="{{ url_for('register') }}" class="login-btn">
+    Register
+</a>
+
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-label">SUPPORT YOUR LOCAL COMMUNITY</span>
+
+            <h2>
+                Discover Amazing <br>
+                <span>Local Businesses</span>
+            </h2>
+
+            <p>
+                Find products and services from trusted businesses
+                in your neighbourhood.
+            </p>
+
+            <!-- Search Box -->
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products or businesses..."
+                >
+
+                <button type="button" id="searchButton">
+                    Search
+                </button>
+
+            </div>
+
+            <p id="searchMessage"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+
+        <div class="section-heading">
+            <span>EXPLORE</span>
+            <h2>Browse Categories</h2>
+            <p>Discover everything available in your locality.</p>
+        </div>
+
+        <div class="category-container">
+
+            <div class="category-card">
+                <span>🛒</span>
+                <h3>Groceries</h3>
+            </div>
+
+            <div class="category-card">
+                <span>👕</span>
+                <h3>Fashion</h3>
+            </div>
+
+            <div class="category-card">
+                <span>🍔</span>
+                <h3>Food</h3>
+            </div>
+
+            <div class="category-card">
+                <span>💻</span>
+                <h3>Electronics</h3>
+            </div>
+
+            <div class="category-card">
+                <span>🔧</span>
+                <h3>Home Services</h3>
+            </div>
+
+            <div class="category-card">
+                <span>💇</span>
+                <h3>Beauty</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Featured Businesses -->
+    <section class="businesses" id="businesses">
+
+        <div class="section-heading">
+            <span>LOCAL DISCOVERIES</span>
+            <h2>Popular Local Businesses</h2>
+            <p>Explore businesses and support local sellers.</p>
+        </div>
+
+        <div class="business-container">
+
+            <!-- Business 1 -->
+            <div class="business-card">
+
+                <div class="business-image bakery-image">
+                    🥖
+                </div>
+
+                <div class="business-details">
+                    <span class="business-tag">FOOD</span>
+
+                    <h3>Fresh Bakery</h3>
+
+                    <p>Bakery and Food</p>
+
+                    <p>Fresh products every day.</p>
+
+                    <a href="#" class="view-btn">View Business →</a>
+                </div>
+
+            </div>
+
+
+            <!-- Business 2 -->
+            <div class="business-card">
+
+                <div class="business-image fashion-image">
+                    👗
+                </div>
+
+                <div class="business-details">
+                    <span class="business-tag">FASHION</span>
+
+                    <h3>Fashion Store</h3>
+
+                    <p>Clothing and Fashion</p>
+
+                    <p>Explore the latest collections.</p>
+
+                    <a href="#" class="view-btn">View Business →</a>
+                </div>
+
+            </div>
+
+
+            <!-- Business 3 -->
+            <div class="business-card">
+
+                <div class="business-image grocery-image">
+                    🥬
+                </div>
+
+                <div class="business-details">
+                    <span class="business-tag">GROCERY</span>
+
+                    <h3>Green Grocery</h3>
+
+                    <p>Groceries</p>
+
+                    <p>Fresh vegetables and fruits.</p>
+
+                    <a href="#" class="view-btn">View Business →</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Seller Promotion Section -->
+    <section class="seller-section">
+
+        <div>
+            <h2>Own a local business?</h2>
+
+            <p>
+                Bring your business online and connect with
+                more customers in your area.
+            </p>
+        </div>
+
+        <a href="#" class="seller-btn">Become a Seller →</a>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>LocalMart<span>.</span></h2>
+
+            <p>Discover local businesses. Support local communities.</p>
+
+            <p class="copyright">
+                &copy; 2026 LocalMart. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Connect JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

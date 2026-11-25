@@ -1,19 +1,7 @@
 
-/* =====================================
-   NIRUTH BIRTHDAY SCRAPBOOK WEBSITE
-   MAIN STYLESHEET
-===================================== */
-
-:root {
-    --orange: #e98252;
-    --dark-orange: #bd5738;
-    --cream: #fff8e9;
-    --paper: #fffdf6;
-    --blue: #c9e8f2;
-    --dark-blue: #456c7a;
-    --brown: #694b3a;
-    --pink: #f7c5c2;
-}
+/* =================================
+   GLOBAL SETTINGS
+================================= */
 
 * {
     margin: 0;
@@ -26,730 +14,583 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--brown);
-    min-height: 100vh;
-
-    background-color: var(--cream);
-
-    background-image:
-        linear-gradient(45deg, var(--orange) 25%, transparent 25%),
-        linear-gradient(-45deg, var(--orange) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, var(--orange) 75%),
-        linear-gradient(-45deg, transparent 75%, var(--orange) 75%);
-
-    background-size: 50px 50px;
-    background-position:
-        0 0,
-        0 25px,
-        25px -25px,
-        -25px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f8fc;
+    color: #222;
+    line-height: 1.6;
 }
 
-button {
-    font-family: inherit;
+a {
+    text-decoration: none;
+}
+
+
+/* =================================
+   NAVIGATION BAR
+================================= */
+
+header {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+}
+
+.logo {
+    color: #2563eb;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.logo span,
+footer h2 span {
+    color: #f59e0b;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.login-btn {
+    background-color: #2563eb;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* =================================
+   HERO SECTION
+================================= */
+
+.hero {
+    background: linear-gradient(120deg, #e8efff, #f1f5ff);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.hero-label {
+    display: inline-block;
+    color: #2563eb;
+    background-color: #dbeafe;
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #172554;
+}
+
+.hero h2 span {
+    color: #2563eb;
+}
+
+.hero-content > p {
+    font-size: 18px;
+    color: #596579;
+    margin-bottom: 30px;
+}
+
+
+/* =================================
+   SEARCH BAR
+================================= */
+
+.search-box {
+    max-width: 650px;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+    background-color: white;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(37, 99, 235, 0.10);
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 16px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: transparent;
+}
+
+.search-box button {
+    padding: 15px 30px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.hidden {
-    display: none !important;
+.search-box button:hover {
+    background-color: #1d4ed8;
+}
+
+#searchMessage {
+    margin-top: 14px;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 600;
+    min-height: 22px;
 }
 
 
-/* =====================================
-   SCREEN TRANSITIONS
-===================================== */
+/* =================================
+   SECTION HEADINGS
+================================= */
 
-.screen {
-    display: none;
-    min-height: 100vh;
-    padding: 55px 18px 75px;
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
 
+.section-heading span {
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 32px;
+    margin: 10px 0;
+    color: #172554;
+}
+
+.section-heading p {
+    color: #777;
+}
+
+
+/* =================================
+   CATEGORY SECTION
+================================= */
+
+.categories {
+    padding: 75px 8%;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.category-card {
+    background-color: white;
+    padding: 35px 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid #f0f0f0;
+}
+
+.category-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
+}
+
+.category-card span {
+    font-size: 42px;
+}
+
+.category-card h3 {
+    margin-top: 12px;
+    color: #253454;
+    font-size: 18px;
+}
+
+
+/* =================================
+   BUSINESS SECTION
+================================= */
+
+.businesses {
+    padding: 75px 8%;
+    background-color: #eef2ff;
+}
+
+.business-container {
+    max-width: 1400px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.business-card {
+    background-color: white;
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.business-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+.business-image {
+    height: 190px;
+    display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 75px;
 }
 
-.screen.active {
-    display: flex;
-    animation: screenEnter 0.7s ease;
+.bakery-image {
+    background-color: #fff0dc;
 }
 
-@keyframes screenEnter {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.fashion-image {
+    background-color: #fce7f3;
 }
 
-
-/* =====================================
-   PAPER CARD DESIGN
-===================================== */
-
-.paper {
-    position: relative;
-
-    width: 100%;
-    max-width: 700px;
-
-    padding: 50px 40px;
-
-    background: var(--paper);
-
-    border: 3px solid #fff;
-
-    border-radius: 22px;
-
-    box-shadow:
-        0 8px 0 #b95f3d,
-        0 15px 35px #67351e35;
-
-    text-align: center;
+.grocery-image {
+    background-color: #dcfce7;
 }
 
-.paper::before {
-    content: "✦";
-
-    position: absolute;
-
-    top: 15px;
-    right: 20px;
-
-    font-size: 25px;
-
-    color: var(--orange);
+.business-details {
+    padding: 25px;
 }
 
-.paper::after {
-    content: "♥";
-
-    position: absolute;
-
-    bottom: 15px;
-    left: 20px;
-
-    font-size: 22px;
-
-    color: #ed9994;
-}
-
-
-/* =====================================
-   COMMON TEXT
-===================================== */
-
-.small-heading {
-    font-size: 11px;
-
-    letter-spacing: 3px;
-
-    font-weight: 800;
-
-    color: var(--dark-orange);
-
-    margin-bottom: 20px;
-}
-
-.paper h1 {
-    font-family: 'Pacifico', cursive;
-
-    font-size: clamp(30px, 6vw, 48px);
-
-    line-height: 1.35;
-
-    color: var(--dark-orange);
-
-    margin-bottom: 20px;
-}
-
-.paper h2 {
-    font-family: 'Caveat', cursive;
-
-    font-size: 32px;
-
-    color: var(--dark-blue);
-
-    margin: 20px 0;
-}
-
-.paper p {
-    font-size: 14px;
-
-    line-height: 1.9;
-
-    color: #846957;
-}
-
-
-/* =====================================
-   BUTTONS
-===================================== */
-
-.red-button {
-    background: var(--orange);
-
-    color: white;
-
-    border: none;
-
-    padding: 14px 25px;
-
-    border-radius: 30px;
-
-    font-size: 13px;
-
-    font-weight: 800;
-
-    box-shadow: 0 5px 0 var(--dark-orange);
-
-    transition: 0.25s;
-
-    margin: 15px 5px;
-}
-
-.red-button:hover {
-    transform: translateY(-4px);
-
-    box-shadow: 0 9px 0 var(--dark-orange);
-}
-
-.red-button:active {
-    transform: translateY(3px);
-
-    box-shadow: 0 2px 0 var(--dark-orange);
-}
-
-.white-button {
-    background: white;
-
-    color: var(--dark-orange);
-
-    border: 2px solid var(--orange);
-
-    padding: 12px 25px;
-
-    border-radius: 30px;
-
-    font-weight: 800;
-
-    margin: 15px 5px;
-
-    transition: 0.3s;
-}
-
-.white-button:hover {
-    background: #fff0e5;
-}
-
-.text-button {
-    background: none;
-
-    border: none;
-
-    color: var(--dark-orange);
-
-    font-size: 14px;
-
-    font-weight: 800;
-
-    padding: 15px;
-
-    margin-top: 20px;
-
-    transition: 0.3s;
-}
-
-.text-button:hover {
-    color: var(--dark-blue);
-
-    transform: translateX(5px);
-}
-
-
-/* =====================================
-   ENTRY SCREEN
-===================================== */
-
-.entry-card {
-    max-width: 480px;
-
-    background: var(--blue);
-}
-
-.sticker {
-    font-size: 65px;
-
-    margin-bottom: 15px;
-
-    animation: floating 3s infinite ease-in-out;
-}
-
-.entry-card form {
-    margin-top: 30px;
-}
-
-.entry-card input {
-    display: block;
-
-    width: 100%;
-
-    padding: 15px;
-
-    margin: 15px 0;
-
-    border: 2px solid #a9d0dc;
-
-    background: #fffdf7;
-
-    border-radius: 12px;
-
-    outline: none;
-
-    font-family: inherit;
-
-    font-size: 13px;
-
-    color: var(--brown);
-}
-
-.entry-card input:focus {
-    border-color: var(--orange);
-}
-
-#errorMessage {
-    color: #b43f37;
-
-    font-weight: 700;
-
-    font-size: 12px;
-
-    margin-top: 15px;
-}
-
-
-/* =====================================
-   WELCOME SCREEN
-===================================== */
-
-.welcome-card {
-    max-width: 650px;
-
-    background: #fff5e5;
-}
-
-.mascot {
-    font-size: 100px;
-
-    margin: 20px 0;
-
-    animation: floating 3s infinite ease-in-out;
-}
-
-.button-group {
-    margin-top: 25px;
-}
-
-#noMessage {
-    color: var(--dark-orange);
-
-    font-weight: 700;
-
-    margin-top: 15px;
-}
-
-
-/* =====================================
-   FLOATING ANIMATION
-===================================== */
-
-@keyframes floating {
-    0%, 100% {
-        transform: translateY(0) rotate(-3deg);
-    }
-
-    50% {
-        transform: translateY(-12px) rotate(3deg);
-    }
-}
-
-
-/* =====================================
-   THREE GIFT BOXES
-===================================== */
-
-.gifts-card {
-    max-width: 850px;
-
-    background: #fff0e4;
-}
-
-.gift-container {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-
-    margin: 45px 0;
-}
-
-.gift-box {
-    background: #f7d4d0;
-
-    border: 3px solid white;
-
+.business-tag {
+    display: inline-block;
+    color: #2563eb;
+    background-color: #dbeafe;
+    padding: 5px 12px;
     border-radius: 20px;
-
-    padding: 30px 10px;
-
-    box-shadow: 0 6px 0 #dc998d;
-
-    transition: 0.3s;
-}
-
-.gift-box:nth-child(2) {
-    background: #d7eaf2;
-
-    box-shadow: 0 6px 0 #91b9ca;
-}
-
-.gift-box:nth-child(3) {
-    background: #ffe0b4;
-
-    box-shadow: 0 6px 0 #dfad75;
-}
-
-.gift-box span {
-    display: block;
-
-    font-size: 65px;
-
-    margin-bottom: 15px;
-
-    transition: 0.3s;
-}
-
-.gift-box small {
-    font-weight: 800;
-
     font-size: 11px;
-
-    letter-spacing: 2px;
-
-    color: var(--brown);
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
-.gift-box:hover {
-    transform: translateY(-12px) rotate(-3deg);
+.business-details h3 {
+    font-size: 22px;
+    color: #172554;
+    margin-bottom: 10px;
 }
 
-.gift-box:hover span {
-    transform: scale(1.2) rotate(10deg);
+.business-details p {
+    color: #777;
+    margin-bottom: 8px;
 }
 
-
-/* =====================================
-   BIRTHDAY WISH
-===================================== */
-
-.letter-card {
-    background: #fff2e9;
-
-    max-width: 650px;
+.view-btn {
+    display: inline-block;
+    margin-top: 15px;
+    color: #2563eb;
+    font-weight: bold;
 }
 
-.letter-card p {
-    font-size: 15px;
-
-    margin: 20px 0;
-}
-
-.letter-card .mascot {
-    font-size: 80px;
+.view-btn:hover {
+    color: #1d4ed8;
 }
 
 
-/* =====================================
-   MEMORY GALLERY
-===================================== */
+/* =================================
+   SELLER PROMOTION
+================================= */
 
-.memories-card {
-    max-width: 900px;
-
-    background: #dceff5;
-}
-
-.photo-gallery {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
+.seller-section {
+    max-width: 1200px;
+    margin: 65px auto;
+    padding: 40px;
+    background-color: #172554;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 25px;
-
-    margin: 40px 0;
 }
 
-.photo-item {
-    background: white;
+.seller-section h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
 
-    padding: 12px 12px 22px;
+.seller-section p {
+    color: #cbd5e1;
+}
 
-    box-shadow: 0 5px 15px #526a7730;
-
-    transform: rotate(-3deg);
-
+.seller-btn {
+    background-color: #f59e0b;
+    color: #172554;
+    padding: 14px 22px;
+    border-radius: 7px;
+    font-weight: bold;
+    white-space: nowrap;
     transition: 0.3s;
 }
 
-.photo-item:nth-child(2) {
-    transform: rotate(3deg);
-
-    margin-top: 20px;
-}
-
-.photo-item:nth-child(3) {
-    transform: rotate(-2deg);
-}
-
-.photo-item:hover {
-    transform: rotate(0deg) translateY(-10px);
-
-    z-index: 2;
-}
-
-.photo-item img {
-    width: 100%;
-
-    height: 220px;
-
-    object-fit: cover;
-
-    border: 1px solid #eee;
-}
-
-.photo-item p {
-    font-family: 'Caveat', cursive;
-
-    font-size: 20px;
-
-    font-weight: 700;
-
-    color: var(--dark-blue);
-
-    margin-top: 12px;
+.seller-btn:hover {
+    background-color: #fbbf24;
 }
 
 
-/* =====================================
-   DOCTOR DIAGNOSIS
-===================================== */
-
-.diagnosis-card {
-    max-width: 650px;
-
-    background: #fff4df;
-}
-
-.diagnosis-card ul {
-    text-align: left;
-
-    padding-left: 30px;
-
-    margin: 15px 0 25px;
-
-    line-height: 2.3;
-
-    font-size: 14px;
-
-    color: #846957;
-}
-
-.diagnosis-card h2 {
-    color: var(--dark-orange);
-}
-
-
-/* =====================================
-   BIRTHDAY CAKE
-===================================== */
-
-.cake-card {
-    max-width: 600px;
-
-    background: #ffe9ed;
-}
-
-.cake-emoji {
-    font-size: 140px;
-
-    margin: 30px 0;
-
-    animation: floating 3s infinite ease-in-out;
-}
-
-#cakeMessage {
-    font-family: 'Caveat', cursive;
-
-    font-size: 27px;
-
-    font-weight: 700;
-
-    color: var(--dark-orange);
-
-    margin: 20px 0;
-}
-
-
-/* =====================================
-   FINAL BIRTHDAY SCREEN
-===================================== */
-
-.birthday-card {
-    max-width: 650px;
-
-    background: #dceff5;
-}
-
-.birthday-card .mascot {
-    font-size: 90px;
-}
-
-.birthday-card h1 {
-    font-size: clamp(40px, 8vw, 65px);
-
-    color: #df704b;
-}
-
-.birthday-card h2 {
-    color: var(--dark-blue);
-}
-
-
-/* =====================================
-   FINAL LETTER
-===================================== */
-
-.final-letter {
-    max-width: 700px;
-
-    background: #fff4df;
-
-    padding: 55px 45px;
-}
-
-.final-letter p {
-    font-family: 'Caveat', cursive;
-
-    font-size: 23px;
-
-    text-align: left;
-
-    margin: 22px 0;
-
-    color: #73503d;
-}
-
-.final-letter h1 {
-    font-size: 38px;
-}
-
-.final-letter h2 {
-    color: var(--dark-orange);
-}
-
-
-/* =====================================
+/* =================================
    FOOTER
-===================================== */
+================================= */
 
 footer {
-    width: 100%;
-
-    padding: 20px;
-
+    background-color: #101c3c;
+    color: white;
     text-align: center;
+    padding: 45px 20px;
+}
 
-    background: #fff6e8;
-
-    border-top: 3px dashed #e8a16d;
+footer h2 {
+    font-size: 30px;
+    color: #60a5fa;
+    margin-bottom: 10px;
 }
 
 footer p {
-    font-size: 10px;
+    color: #cbd5e1;
+}
 
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-    color: #a96b4e;
-
-    margin: 5px;
+.copyright {
+    margin-top: 20px;
+    font-size: 13px;
 }
 
 
-/* =====================================
-   MOBILE RESPONSIVENESS
-===================================== */
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
 
-@media (max-width: 650px) {
+@media (max-width: 900px) {
 
-    .paper {
-        padding: 40px 22px;
+    .navbar {
+        padding: 18px 5%;
     }
 
-    .screen {
-        padding: 30px 14px;
+    .hero h2 {
+        font-size: 38px;
     }
 
-    .gift-container {
-        grid-template-columns: 1fr;
+    .category-container,
+    .business-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
+    .seller-section {
+        margin: 40px 5%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
         gap: 18px;
     }
 
-    .gift-box {
-        padding: 20px;
+    .nav-links {
+        gap: 18px;
     }
 
-    .gift-box span {
-        font-size: 50px;
+    .hero {
+        padding: 70px 18px;
     }
 
-    .photo-gallery {
+    .hero h2 {
+        font-size: 31px;
+    }
+
+    .hero-content > p {
+        font-size: 16px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .category-container,
+    .business-container {
         grid-template-columns: 1fr;
-
-        gap: 25px;
     }
 
-    .photo-item {
-        max-width: 320px;
-
-        margin: auto !important;
+    .categories,
+    .businesses {
+        padding: 55px 6%;
     }
 
-    .photo-item img {
-        height: 280px;
+    .section-heading h2 {
+        font-size: 27px;
     }
 
-    .mascot {
-        font-size: 75px;
+    .seller-section {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 35px 5%;
+        padding: 28px;
     }
+}
 
-    .cake-emoji {
-        font-size: 110px;
-    }
+/* =================================
+   CUSTOMER REGISTRATION PAGE
+================================= */
 
-    .final-letter {
-        padding: 40px 25px;
-    }
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    background: linear-gradient(135deg, #e8efff, #f7f8fc);
+}
 
-    .final-letter p {
-        font-size: 20px;
-    }
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
 
+.auth-logo {
+    text-align: center;
+    color: #2563eb;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.auth-logo span {
+    color: #f59e0b;
+}
+
+.auth-card h2 {
+    text-align: center;
+    color: #172554;
+    margin-bottom: 10px;
+}
+
+.auth-description {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-card label {
+    margin: 12px 0 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+.auth-card input {
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 14px;
+    outline: none;
+}
+
+.auth-card input:focus {
+    border-color: #2563eb;
+}
+
+.register-btn {
+    margin-top: 25px;
+    padding: 14px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background-color: #1d4ed8;
+}
+
+.back-home {
+    display: block;
+    text-align: center;
+    margin-top: 22px;
+    color: #2563eb;
+}
+
+.flash {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.flash.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.flash.error {
+    background: #fee2e2;
+    color: #991b1b;
 }
